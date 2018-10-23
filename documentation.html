@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's Travel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Let's Travel! <span class="time dispArea" id="time"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Let's Travel <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sign-out">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mainContainer">
+        <div class="row mainRow justify-content-center">
+            <div class="col-12 mainColumn">
+                <p>
+                    Let's Travel's basic functionality is for time management of driving. It will show the user's trip
+                    time for regularly visited locations like work and home.
+                </p> <br>
+                <p>
+                    Let's Travel will already know the user's current location. To add a destination; the user must add
+                    a their destination with the add button feature. To add a button user must fill out destination
+                    name and address. Then click add destination button.
+                </p> <br>
+                <p>
+                    The location will be added to the table below with the information trip time, arrival time, and
+                    distance. With the added feature of weather for your current location and destination. Trip time
+                    does take traffic, construction, accidents, etc into concideration when calculating.
+                </p> <br>
+                <p>
+                    To remove a saved destination user simply clicks the remove feature. It is the minus on the right
+                    of the button.
+                </p> <br>
+                <p>
+                    If the user wishes to open route in google maps. The user can click on the google maps icon, and it
+                    will open the route clicked in google maps.
+                </p>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- JQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Moment CDN -->
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <!-- AJAX JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- Do we need this called out as a script tag? -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm67gwaaHPjy9Qdi2s4ge9ZT-6c02U2Sw"></script>
+    <!-- &libraries=places -->
+    <!--maps api-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--distance matrix api-->
+    <script src="Assets/Javascript/script.js"></script>
+</body>
+
+</html>

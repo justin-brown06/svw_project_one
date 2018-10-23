@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Let's Travel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="signInPage">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <h1>Sign Up</h1>
+                    <form action="" id="signUp">
+                        <input type="text" placeholder="Enter a Username" id="userNameEntry">
+                        <input type="text" placeholder="Enter an Email" id="emailEntry">
+                        <input type="password" id="passwordEntry" name="password" placeholder="Enter a Password"
+                            data-toggle="password">
+                        <!-- <input type="text" placeholder="Enter a Password" id="passwordEntry"> -->
+                        <input id="createUser" type="submit" value="START">
+                    </form>
+                    <h1>Sign In</h1>
+                    <form action="" id="signIn">
+                        <input type="text" placeholder="Enter an Email" id="emailLogin">
+                        <input type="password" id="passwordLogin" name="password" placeholder="Enter a Password">
+                        <input id="signinUser" type="submit" placeholder="Sign-in">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Let's Travel! <span class="time dispArea" id="time"></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Let's Travel <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="sign-out" href="index.html">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mainContainer">
+        <div class="row mainRow justify-content-center">
+            <div class="col-12 mainColumn">
+                <div class="row">
+                    <div id="current-items" class="col-sm-12 col-md-6  dispArea">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <h5>Current Location: </h5>
+                                    <span class="location" id="GPS">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="current-items" class="col-sm-12 col-md-6  dispArea">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <h5>Current Destination: </h5>
+                                    <span class="location" id="destGPS">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row favRow justify-content-center">
+                    <div id="new-destinations" class="col-12 favoriteButtons">
+                    </div>
+                </div>
+                <div class="row tableRow">
+                    <div class="col-12 tableColumn">
+                        <table class="table table-responsive-md">
+                            <thead class="tableSection">
+                                <tr>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Trip Length</th>
+                                    <th scope="col">Arrival Time</th>
+                                    <th scope="col">Distance</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tableSection" id="tableInsertTarget">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="dest-search" class="col-sm-12">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input id="dest-name" class="form-control mr-sm-2" type="text" placeholder="Destination Name"
+                                aria-label="Destination">
+                            <input id="dest-input" class="form-control mr-sm-2" type="text" placeholder="Destination Address"
+                                aria-label="Destination">
+                            <button id="dest-btn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row weatherDiv">
+                    <div class="col-sm-12 col-md-6 weathCont">
+                        <div class="row">
+                            <div class="col-12">Current Weather</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="currentIcon">IMG</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="currentTemp">Current Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="tempMax">High Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="tempMin">Low Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="summary">Forecast</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 weathCont">
+                        <div class="row">
+                            <div class="col-12">Destination Weather</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="DestIcon">IMG</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="DestCurrTemp">Current Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="DestHighTemp">High Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="DestLowTemp">Low Temp</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" id="summaryDestination">Forecast</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <!-- Google API -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Moment CDN -->
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <!-- AJAX JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- Do we need this called out as a script tag? -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm67gwaaHPjy9Qdi2s4ge9ZT-6c02U2Sw"></script>
+    <!-- &libraries=places -->
+    <!--maps api-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--distance matrix api-->
+    <script src="Assets/Javascript/script.js"></script>
+</body>
+
+</html>

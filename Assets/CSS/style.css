@@ -1,0 +1,234 @@
+html{
+    z-index: 0;
+} 
+
+body{
+    background-image: url(../Images/background.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+h5{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#current-items{
+    width: 45%;
+    margin: 2.5%;
+    box-shadow: 4px 4px 0 1px rgba(134, 134, 134, 0.322);
+}
+
+#loginScreen{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 0px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: coral;
+    z-index: 4; 
+    opacity: 1;
+}
+
+#signinButton{
+    width: 15%;
+}
+
+#current-items{
+    margin-bottom: 10px;
+}
+
+#dest-name, #dest-input{
+    margin-bottom: 10px;
+}
+
+.row{
+    margin-top: .4rem;
+    margin-bottom: .4rem;
+    text-align: center;
+}
+
+.navbar-light .navbar-brand{
+    color: white;
+}
+
+.bg-dark{
+    padding: .7rem;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.486);
+}
+
+.mainContainer {
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+    border: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: .5rem;
+    /* padding: 2.5%; */
+    background-color: rgba(49, 49, 49, 0.582);
+    box-shadow: inset 0px 0px 30px 30px rgba(0, 92, 92, 0.514);
+    color: white;
+}
+
+.dispArea {
+    background-color: rgba(0, 92, 92, 0.801);
+    width: auto;
+    padding: .2rem .5rem;
+    border: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: .3rem;
+    box-shadow: outset 0px 0px 5px 5px black;
+}
+
+.weatherDisplayArea{
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+    background-color: rgb(0, 92, 92, 0.801);
+    border: white;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: .5rem;
+}
+
+.table{
+    background-color: rgb(0, 92, 92, 0.801);
+    box-shadow: 4px 4px 0 1px rgba(134, 134, 134, 0.322);
+    padding: .2rem .5rem;
+    text-align: center;
+    border: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: .3rem;
+}
+
+
+
+.imgCont{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 2.5%;
+    widows: 20%;
+    height: auto;
+
+}
+
+.favoriteButtons{
+    text-align: center;
+}
+
+.favButts{
+    font-size: 1rem;
+    padding: .2rem .7rem;
+    margin-top: .5rem;
+    color: white;
+    background-color: black;
+    border-style: solid;
+    border-color: lightgreen;
+    border-radius: 5px;
+}
+
+h1{
+    color: white;
+}
+
+/* weather styling */
+h6{
+    font-size: 16px;
+    font-weight: 900px;
+}
+#tempMax, #tempMin, #current{
+    font-size: 20px;
+}
+ #summary{
+     font-size: 14px;
+ }
+
+.weatherDiv{
+     text-align: center;
+     width: 100%;
+     margin: 2.5%;
+ }
+.icon{
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+.signInPage{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 92, 92);
+    z-index: 4; 
+    opacity: 1;
+}
+.icon-destination{
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
+.weathCont {
+    background-color: rgb(0, 92, 92, 0.801);
+    box-shadow: 4px 4px 0 1px rgba(134, 134, 134, 0.322);
+    width: 100%;
+    /* margin: 2.5%; */
+    border: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: .5rem;
+    margin-bottom: .7rem;
+    
+}
+
+#tempMaxDestination, #tempMinDestination, #destination{
+    font-size: 20px;
+}
+#summaryDestination{
+    font-size: 14px;
+}    
+/* end of weather styling */
+
+
+#particles-js{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+@media (min-width: 576px){
+.col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 95%;
+}
+
+.weatherDiv{
+    text-align: center;
+    width: 95%;
+    margin: 2.5%;
+}
+}
+
+@media (min-width: 768px){
+    #current-items{
+        width: 95%;
+        margin: 2.5%
+    }
+
+    .weatherDiv{
+        text-align: center;
+        width: 100%;
+        margin: 2.5%;
+    }
+}
